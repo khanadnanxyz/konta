@@ -6,12 +6,10 @@ import (
 	"github.com/konta/model"
 )
 
-
 var (
 	// Models describe models list for migration
 	Models []interface{}
 )
-
 
 func main() {
 	db, err := gorm.Open("postgres", "host=192.168.1.153 port=5432 user=postgres dbname=konta_db password=secret sslmode=disable")
@@ -27,6 +25,9 @@ func main() {
 	Models = append(Models, &model.Role{})
 	Models = append(Models, &model.User{})
 	Models = append(Models, &model.Category{})
+	Models = append(Models, &model.Question{})
+	Models = append(Models, &model.Option{})
+	Models = append(Models, &model.Answer{})
 
 	db.AutoMigrate(Models...)
 }
