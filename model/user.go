@@ -18,5 +18,5 @@ type User struct {
 
 // TableName set a custom table name for model
 func (*User) TableName() string {
-	return "test.users"
+	return "account.users"
 }

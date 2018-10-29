@@ -12,5 +12,5 @@ type Role struct {
 
 // TableName set a custom table name for model
 func (*Role) TableName() string {
-	return "test.roles"
+	return "account.roles"
 }

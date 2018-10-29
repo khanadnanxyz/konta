@@ -16,5 +16,5 @@ type Answer struct {
 
 // TableName set a custom table name for Answer model
 func (*Answer) TableName() string {
-	return "account.answers"
+	return "poll.answers"
 }

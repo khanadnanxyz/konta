@@ -14,5 +14,5 @@ type Option struct {
 
 // TableName set a custom table name for Option model
 func (*Option) TableName() string {
-	return "account.options"
+	return "poll.options"
 }

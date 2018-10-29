@@ -12,5 +12,5 @@ type Category struct {
 
 // Set QuestionCategory's table name to be `question_categories`
 func (*Category) TableName() string {
-	return "test.categories"
+	return "poll.categories"
 }

@@ -1,10 +1,10 @@
 package main
 
-
 import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
 	"github.com/khanadnanxyz/konta/model"
+	_ "github.com/lib/pq"
 )
 
 var (
