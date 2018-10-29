@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/sqlite"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"github.com/khanadnanxyz/konta/model"
 	_ "github.com/lib/pq"
 )
@@ -30,7 +30,11 @@ func main() {
 	Models = append(Models, &model.Option{})
 	Models = append(Models, &model.Answer{})
 
+	//doesn't work
+	//db.Model(&model.User{}).AddForeignKey("role_id", "roles(id)", "RESTRICT", "RESTRICT")
+
 	db.AutoMigrate(Models...)
+
 }
 
 func init() {

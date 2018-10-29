@@ -6,9 +6,11 @@ import "time"
 type Answer struct {
 	ID        uint64    `gorm:"AUTO_INCREMENT;primary_key"`
 	User      User      `gorm:"foreignkey:UserID"`
-	UserID    int64     `gorm:"not null"`
+	UserID    uint64     `gorm:"not null"`
+	Question   Question `gorm:"foreignkey:QuestionID"`
+	QuestionID uint64		`gorm:"not null"`
 	Option    Option    `gorm:"foreignkey:OptionID"`
-	OptionID  int64     `gorm:"not null"`
+	OptionID  uint64     	`gorm:"not null"`
 	RoleName  string    `gorm:"type:varchar(255);not null"`
 	CreatedAt time.Time `gorm:"default:'now()';not null"`
 	UpdatedAt time.Time `gorm:"default:'now()'"`

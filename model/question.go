@@ -6,9 +6,9 @@ import "time"
 type Question struct {
 	ID         uint64    `gorm:"AUTO_INCREMENT;primary_key"`
 	User       User      `gorm:"foreignkey:UserID"`
-	UserID     int64     `gorm:"not null"`
+	UserID     uint64     `gorm:"not null"`
 	Category   Category  `gorm:"foreignkey:CategoryID"`
-	CategoryID int64     `gorm:"not null"`
+	CategoryID uint64     `gorm:"not null"`
 	QText      string    `gorm:"type:varchar(255);not null"`
 	CreatedAt  time.Time `gorm:"default:'now()';not null"`
 	UpdatedAt  time.Time `gorm:"default:'now()'"`

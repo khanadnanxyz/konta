@@ -6,7 +6,7 @@ import "time"
 type User struct {
 	ID        uint64    `gorm:"AUTO_INCREMENT;primary_key"`
 	Role      Role      `gorm:"foreignkey:RoleId"`
-	RoleID    int64     `gorm:"not null"`
+	RoleID    uint64     `gorm:"not null"`
 	FullName  string    `gorm:"type:varchar(255);not null"`
 	Username  string    `gorm:"type:varchar(100);not null"`
 	Password  string    `gorm:"type:varchar(100);not null"`
