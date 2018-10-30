@@ -18,3 +18,11 @@ type Question struct {
 func (*Question) TableName() string {
 	return "poll.question"
 }
+
+func (q *Question) Validate() error {
+	if q.QText == ""{
+		ve := ValidationError{"QText", "is required"}
+		return &ve
+	}
+	return nil
+}

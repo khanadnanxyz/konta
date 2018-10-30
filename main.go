@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/go-chi/chi"
 	"github.com/khanadnanxyz/konta/api"
+	"github.com/khanadnanxyz/konta/conn"
 	_ "github.com/khanadnanxyz/konta/helper"
 	"net/http"
 )
@@ -12,6 +13,9 @@ func main() {
 	http.ListenAndServe(":8080", router)
 }
 
+func init()  {
+	db.Connect()
+}
 
 func routers() *chi.Mux {
 	r := chi.NewRouter()
