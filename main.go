@@ -14,11 +14,13 @@ func main() {
 
 
 func routers() *chi.Mux {
-	router := chi.NewRouter()
-	router.Get("/questions", api.AllQuestion)
-	router.Get("/question/{id}", api.DetailQuestion)
-	router.Post("/question", api.CreateQuestion)
-	router.Put("/question/{id}", api.UpdateQuestion)
-	router.Delete("/question/{id}", api.DeleteQuestion)
-	return router
+	r := chi.NewRouter()
+	r.Route("/questions", func(r chi.Router) {
+		r.Get("/", api.AllQuestion)
+		r.Get("/{id}", api.DetailQuestion)
+		r.Post("/", api.CreateQuestion)
+		r.Put("/{id}", api.UpdateQuestion)
+		r.Delete("/{id}", api.DeleteQuestion)
+	})
+	return r
 }
