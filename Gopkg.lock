@@ -21,6 +21,22 @@
   version = "v3.3.3"
 
 [[projects]]
+  digest = "1:bcd7c6fe3da916b9887cb91340bf52feae66b0064bb40a292040208326c86505"
+  name = "github.com/go-chi/docgen"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "ac43d9a63f3b58b1e82922411d2de365d896ee72"
+  version = "v1.0.2"
+
+[[projects]]
+  digest = "1:54d7b4b9ab2bb2bae35b55eea900bc8fe15cba05a95fc78bf7fd7b82a9a07afa"
+  name = "github.com/go-chi/render"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "3215478343fbc559bd3fc08f7031bb134d6bdad5"
+  version = "v1.0.1"
+
+[[projects]]
   digest = "1:c0d19ab64b32ce9fe5cf4ddceba78d5bc9807f0016db6b1183599da3dcc24d10"
   name = "github.com/hashicorp/hcl"
   packages = [
@@ -174,9 +190,10 @@
   input-imports = [
     "github.com/go-chi/chi",
     "github.com/go-chi/chi/middleware",
+    "github.com/go-chi/docgen",
+    "github.com/go-chi/render",
     "github.com/jinzhu/gorm",
     "github.com/jinzhu/gorm/dialects/postgres",
-    "github.com/lib/pq",
     "github.com/spf13/viper",
   ]
   solver-name = "gps-cdcl"
