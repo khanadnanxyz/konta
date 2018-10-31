@@ -2,7 +2,7 @@ package model
 
 // Question represents a question model
 type Question2 struct {
-	ID         uint64    `gorm:"AUTO_INCREMENT;primary_key"`
+	ID         uint64    `gorm:"AUTO_INCREMENT;primary_key" json:"id"`
 	QText      string    `gorm:"type:varchar(255);not null"json:"q_text"`
 }
 

@@ -19,13 +19,13 @@ func CreateQuestion(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte(err.Error()))
 		return
 	}
-	_, err := repository.CreateQuestion2(&body)
+	q, err := repository.CreateQuestion2(&body)
 	if err != nil {
 		w.Write([]byte(err.Error()))
 		return
 	}
-	w.Write([]byte("OK"))
-
+	qj, err := json.Marshal(q)
+	w.Write(qj)
 }
 func UpdateQuestion(w http.ResponseWriter, r *http.Request) {}
 func DeleteQuestion(w http.ResponseWriter, r *http.Request) {}
