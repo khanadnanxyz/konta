@@ -24,5 +24,11 @@ func Connect() {
 	println("success")
 	Db = db
 	//db.AutoMigrate(&model.Question2{})
+	//db.AutoMigrate(&model.Role{})
+	//db.AutoMigrate(&model.User{})
+	//db.AutoMigrate(&model.Category{})
+	//db.AutoMigrate(&model.Question{})
+	//db.AutoMigrate(&model.Option{})
+	//db.AutoMigrate(&model.Answer{})
 
 }
