@@ -13,7 +13,7 @@ func catch(err error) {
 	}
 }
 
-// respondwithError return error message
+// respondwithError return errors message
 func respondWithError(w http.ResponseWriter, code int, msg string) {
 	respondwithJSON(w, code, map[string]string{"message": msg})
 }

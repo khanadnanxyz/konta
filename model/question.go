@@ -1,6 +1,9 @@
 package model
 
-import "time"
+import (
+	"github.com/khanadnanxyz/konta/errors"
+	"time"
+)
 
 // Question represents a question model
 type Question struct {
@@ -21,7 +24,7 @@ func (*Question) TableName() string {
 
 func (q *Question) Validate() error {
 	if q.QText == ""{
-		ve := ValidationError{"QText", "is required"}
+		ve := errors.ValidationError{"QText", "is required"}
 		return &ve
 	}
 	return nil

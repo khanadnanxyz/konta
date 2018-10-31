@@ -1,5 +1,7 @@
 package model
 
+import "github.com/khanadnanxyz/konta/errors"
+
 // Question represents a question model
 type Question2 struct {
 	ID         uint64    `gorm:"AUTO_INCREMENT;primary_key" json:"id"`
@@ -13,7 +15,7 @@ func (*Question2) TableName() string {
 
 func (q *Question2) Validate() error {
 	if q.QText == ""{
-		ve := ValidationError{"QText", "is required"}
+		ve := errors.ValidationError{"QText", "is required"}
 		return &ve
 	}
 	return nil

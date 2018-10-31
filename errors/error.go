@@ -1,6 +1,6 @@
-package model
+package errors
 
-// ValidationError type error is returned from model validation
+// ValidationError type errors is returned from model validation
 type ValidationError struct {
 	Field, Msg string
 }

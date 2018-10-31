@@ -2,6 +2,7 @@ package api
 
 import (
 	"encoding/json"
+	"github.com/khanadnanxyz/konta/api/payload"
 	"github.com/khanadnanxyz/konta/model"
 	"github.com/khanadnanxyz/konta/repository"
 	"net/http"
@@ -9,7 +10,20 @@ import (
 
 func AllQuestion(w http.ResponseWriter, r *http.Request) {}
 func DetailQuestion(w http.ResponseWriter, r *http.Request) {}
+
 func CreateQuestion(w http.ResponseWriter, r *http.Request) {
+	body := payload.QuestionPayload{}
+	if err := parseBody(r, &body); err != nil {
+		w.Write([]byte(err.Error()))
+		return
+	}
+	if err := body.Validate(); err != nil {
+		w.Write([]byte(err.Error()))
+		return
+	}
+}
+
+func CreateQuestion2(w http.ResponseWriter, r *http.Request) {
 	body := model.Question2{}
 	if err := parseBody(r, &body); err != nil {
 		w.Write([]byte(err.Error()))

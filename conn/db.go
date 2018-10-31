@@ -18,7 +18,7 @@ func Connect() {
 		" user="+ username +" dbname=" + database + " password=" + password + " sslmode=disable")
 	if err != nil {
 		println(err.Error())
-		println("error")
+		println("errors")
 		return
 	}
 	println("success")
