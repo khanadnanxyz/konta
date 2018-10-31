@@ -3,12 +3,19 @@ package db
 import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
+	"github.com/khanadnanxyz/konta/config"
 )
 
 var Db *gorm.DB
 
 func Connect() {
-	db, err := gorm.Open("postgres", "host=192.168.1.153 port=5432 user=postgres dbname=konta_db password=secret sslmode=disable")
+	host := config.AppConfig.GetString("postgres.host")
+	port := config.AppConfig.GetString("postgres.port")
+	username := config.AppConfig.GetString("postgres.username")
+	password := config.AppConfig.GetString("postgres.password")
+	database := config.AppConfig.GetString("postgres.db")
+	db, err := gorm.Open("postgres", "host=" + host + " port=" + port +
+		" user="+ username +" dbname=" + database + " password=" + password + " sslmode=disable")
 	if err != nil {
 		println(err.Error())
 		println("error")
@@ -16,5 +23,6 @@ func Connect() {
 	}
 	println("success")
 	Db = db
+	//db.AutoMigrate(&model.Question2{})
 
 }

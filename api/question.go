@@ -15,13 +15,16 @@ func CreateQuestion(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte(err.Error()))
 		return
 	}
-
 	if err := body.Validate(); err != nil {
 		w.Write([]byte(err.Error()))
 		return
 	}
-
-	repository.CreateQuestion2(&body)
+	_, err := repository.CreateQuestion2(&body)
+	if err != nil {
+		w.Write([]byte(err.Error()))
+		return
+	}
+	w.Write([]byte("OK"))
 
 }
 func UpdateQuestion(w http.ResponseWriter, r *http.Request) {}
