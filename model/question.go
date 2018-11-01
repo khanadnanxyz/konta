@@ -11,8 +11,9 @@ type Question struct {
 	User       User      `gorm:"foreignkey:UserID"`
 	UserID     uint64     `gorm:"not null"`
 	Category   Category  `gorm:"foreignkey:CategoryID"`
-	CategoryID uint64     `gorm:"not null"`
+	CategoryID uint64    `gorm:"not null"`
 	QText      string    `gorm:"type:varchar(255);not null"`
+	Option	   []Option
 	CreatedAt  time.Time `gorm:"default:'now()';not null"`
 	UpdatedAt  time.Time `gorm:"default:'now()'"`
 }
