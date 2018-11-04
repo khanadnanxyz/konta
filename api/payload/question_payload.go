@@ -14,9 +14,6 @@ func (qp *QuestionPayload) Validate() error {
 	if qp.QText == "" {
 		return &errors.ValidationError{"q_text", "is required"}
 	}
-	//if (!govalidator.IsNumeric(string(qp.CategoryId))) {
-	//	return &errors.ValidationError{"Number", "is required"}
-	//}
 	if len(qp.Options) < 2 {
 		return &errors.ValidationError{"options", "very few options"}
 	}

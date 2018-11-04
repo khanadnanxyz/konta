@@ -11,7 +11,6 @@ type Answer struct {
 	QuestionID uint64		`gorm:"not null"`
 	Option    Option    `gorm:"foreignkey:OptionID"`
 	OptionID  uint64     	`gorm:"not null"`
-	RoleName  string    `gorm:"type:varchar(255);not null"`
 	CreatedAt time.Time `gorm:"default:'now()';not null"`
 	UpdatedAt time.Time `gorm:"default:'now()'"`
 }
