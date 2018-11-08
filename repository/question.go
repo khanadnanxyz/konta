@@ -5,11 +5,9 @@ import (
 	"github.com/khanadnanxyz/konta/model"
 )
 
-func GetAllQuestion()  {
-	
-}
+func GetAllQuestion() {}
 
-func AddQuestion(question *model.Question) (*model.Question, error)  {
+func AddQuestion(question *model.Question) (*model.Question, error) {
 	if err := db.Db.Create(&question).Error; err != nil {
 		return nil, err
 	}

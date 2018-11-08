@@ -2,14 +2,15 @@ package api
 
 import (
 	"encoding/json"
+	"net/http"
+
 	"github.com/khanadnanxyz/konta/api/payload"
 	"github.com/khanadnanxyz/konta/model"
 	"github.com/khanadnanxyz/konta/repository"
 	"github.com/khanadnanxyz/konta/util"
-	"net/http"
 )
 
-func AllAnswers(w http.ResponseWriter, r *http.Request) {}
+func AllAnswers(w http.ResponseWriter, r *http.Request)   {}
 func DetailAnswer(w http.ResponseWriter, r *http.Request) {}
 
 func CreateAnswer(w http.ResponseWriter, r *http.Request) {
