@@ -2,19 +2,31 @@ package config
 
 import (
 	"fmt"
+	"log"
+
 	"github.com/spf13/viper"
+	_ "github.com/spf13/viper/remote"
 )
 
+func LoadConfig() {
 
-var AppConfig *viper.Viper
+	viper.BindEnv("app_env")
+	viper.BindEnv("consul_url")
+	viper.BindEnv("consul_path")
 
-func LoadConfig()  {
-	v := viper.New()
-	v.SetConfigName("config") // name of config file (without extension)
-	v.AddConfigPath(".")
-	err := v.ReadInConfig() // Find and read the config file
-	if err != nil { // Handle errors reading the config file
-		panic(fmt.Errorf("Fatal errors config file: %s \n", err))
+	cURL := viper.GetString("consul_url")
+	cPath := viper.GetString("consul_path")
+	if cURL == "" {
+		log.Fatal("CONSUL_URL missing")
 	}
-	AppConfig = v
+	if cPath == "" {
+		log.Fatal("CONSUL_PATH missing")
+	}
+
+	viper.AddRemoteProvider("consul", cURL, cPath)
+	viper.SetConfigType("yml")
+
+	if err := viper.ReadRemoteConfig(); err != nil {
+		log.Fatal(fmt.Sprintf(`%s named "%s"`, err.Error(), cPath))
+	}
 }

@@ -2,6 +2,36 @@
 
 
 [[projects]]
+  branch = "master"
+  digest = "1:1237f2e0fe3256bbce813cc1bafddaf26b85bddbd2f8c08c30eb845140198aee"
+  name = "github.com/armon/consul-api"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "eb2c6b5be1b66bab83016e0b05f01b8d5496ffbd"
+
+[[projects]]
+  digest = "1:d976f75bc1bc6cdbef99ae503e713f753d98d9effb9e278701956ee34cee1b33"
+  name = "github.com/coreos/etcd"
+  packages = [
+    "client",
+    "pkg/pathutil",
+    "pkg/srv",
+    "pkg/types",
+    "version",
+  ]
+  pruneopts = "UT"
+  revision = "27fc7e2296f506182f58ce846e48f36b34fe6842"
+  version = "v3.3.10"
+
+[[projects]]
+  digest = "1:0ef770954bca104ee99b3b6b7f9b240605ac03517d9f98cbc1893daa03f3c038"
+  name = "github.com/coreos/go-semver"
+  packages = ["semver"]
+  pruneopts = "UT"
+  revision = "8ab6407b697782a06568d4b7f1db25550ec2e4c6"
+  version = "v0.2.0"
+
+[[projects]]
   digest = "1:abeb38ade3f32a92943e5be54f55ed6d6e3b6602761d74b4aab4c9dd45c18abd"
   name = "github.com/fsnotify/fsnotify"
   packages = ["."]
@@ -127,12 +157,53 @@
   version = "v1.0.3"
 
 [[projects]]
-  digest = "1:214775c11fd26da94a100111a62daa25339198a4f9c57cb4aab352da889f5b93"
+  digest = "1:e51827672e3fb26dfd07e1ca96bdece5b1c0ecebacdaf0235d7593314d2a17ac"
   name = "github.com/spf13/viper"
-  packages = ["."]
+  packages = [
+    ".",
+    "remote",
+  ]
   pruneopts = "UT"
   revision = "2c12c60302a5a0e62ee102ca9bc996277c2f64f5"
   version = "v1.2.1"
+
+[[projects]]
+  digest = "1:03aa6e485e528acb119fb32901cf99582c380225fc7d5a02758e08b180cb56c3"
+  name = "github.com/ugorji/go"
+  packages = ["codec"]
+  pruneopts = "UT"
+  revision = "b4c50a2b199d93b13dc15e78929cfb23bfdf21ab"
+  version = "v1.1.1"
+
+[[projects]]
+  branch = "master"
+  digest = "1:b2faf2256a00b05784390fbd8ea4b22519ea62daf751fef4ab4ce583c66abf1b"
+  name = "github.com/xordataexchange/crypt"
+  packages = [
+    "backend",
+    "backend/consul",
+    "backend/etcd",
+    "config",
+    "encoding/secconf",
+  ]
+  pruneopts = "UT"
+  revision = "b2862e3d0a775f18c7cfe02273500ae307b61218"
+
+[[projects]]
+  branch = "master"
+  digest = "1:bfd957255a80a23af53f514cbaa5f16061df295e37234b5e0935cf49d2cca650"
+  name = "golang.org/x/crypto"
+  packages = [
+    "cast5",
+    "openpgp",
+    "openpgp/armor",
+    "openpgp/elgamal",
+    "openpgp/errors",
+    "openpgp/packet",
+    "openpgp/s2k",
+  ]
+  pruneopts = "UT"
+  revision = "e4dc69e5b2fd71dcaf8bd5d054eb936deb78d1fa"
 
 [[projects]]
   branch = "master"
@@ -173,6 +244,7 @@
     "github.com/jinzhu/gorm",
     "github.com/jinzhu/gorm/dialects/postgres",
     "github.com/spf13/viper",
+    "github.com/spf13/viper/remote",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
